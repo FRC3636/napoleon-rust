@@ -1,3 +1,12 @@
+use frc::prelude::*;
+mod drivetrain;
+
 fn main() {
-    println!("Hello, world!");
+    let mut state: State = State::new().unwrap();
+    state.add_systems(Init, hello_robot);
+    state.run();
+}
+
+fn hello_robot() {
+    println!("Hello, Robot!");
 }
