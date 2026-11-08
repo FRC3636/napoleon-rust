@@ -1,4 +1,6 @@
 use frc::prelude::*;
+
+mod can;
 mod drivetrain;
 
 fn main() {

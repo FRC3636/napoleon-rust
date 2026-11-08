@@ -1,4 +1,7 @@
+use can;
 use frc::prelude::*;
+
+use crate::can::CanivoreID;
 
 struct Drivetrain {
     right_1: TalonFX,
@@ -10,10 +13,10 @@ struct Drivetrain {
 impl Drivetrain {
     fn new() -> Self {
         Self {
-            right_1: TalonFX::new(1, "*"),
-            right_2: TalonFX::new(2, "*"),
-            left_1: TalonFX::new(3, "*"),
-            left_2: TalonFX::new(4, "*"),
+            right_1: TalonFX::new(CanivoreID::RightDrive1 as i32, "*"),
+            right_2: TalonFX::new(CanivoreID::RightDrive2 as i32, "*"),
+            left_1: TalonFX::new(CanivoreID::LeftDrive1 as i32, "*"),
+            left_2: TalonFX::new(CanivoreID::LeftDrive2 as i32, "*"),
         }
     }
 }
@@ -31,3 +34,5 @@ impl DrivetrainTargets {
         }
     }
 }
+
+fn periodic(mut drivetrain: ResourceMut<Drivetrain>, targets: Resource<DrivetrainTargets>) {}
