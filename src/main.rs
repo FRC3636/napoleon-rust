@@ -1,14 +1,13 @@
 use frc::prelude::*;
 
+mod bindings;
 mod can;
-mod drivetrain;
+mod subsystems;
 
 fn main() {
     let mut state: State = State::new().unwrap();
-    state.add_systems(Init, hello_robot);
-    state.run();
-}
 
-fn hello_robot() {
-    println!("Hello, Robot!");
+    drivetrain::setup(&mut state);
+
+    state.run();
 }
