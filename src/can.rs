@@ -1,5 +1,3 @@
-use frc::prelude::*;
-
 pub enum CanID {
     RightDrive1,
     RightDrive2,
@@ -16,12 +14,12 @@ impl CanID {
             CanID::LeftDrive2 => 4,
         }
     }
-    pub fn bus(&self) -> String {
+    pub fn bus(&self) -> &'static str  {
         match *self {
-            CanID::RightDrive1 => String::from("*"),
-            CanID::RightDrive2 => String::from("*"),
-            CanID::LeftDrive1 => String::from("*"),
-            CanID::LeftDrive2 => String::from("*"),
+            CanID::RightDrive1 => "rio",
+            CanID::RightDrive2 => "rio",
+            CanID::LeftDrive1 => "rio",
+            CanID::LeftDrive2 => "rio",
         }
     }
 }

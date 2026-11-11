@@ -1,0 +1,30 @@
+{
+  "languages": {
+    "C++": {
+      "format_on_save": "off",
+    },
+  },
+  "lsp": {
+    "rust-analyzer": {
+      "initialization_options": {
+        "rustfmt": {
+          "extraArgs": ["+nightly"],
+        },
+        "cargo": {
+          "target": "arm-unknown-linux-gnueabi",
+          // "target": "x86_64-unknown-linux-gnu",
+          // "target": "aarch64-apple-darwin",
+          "buildScripts": {
+            "enable": true,
+          },
+        },
+        "procMacro": {
+          "enable": true,
+        },
+        "inlayHints": {
+          "maxLength": 10,
+        },
+      },
+    },
+  },
+}
